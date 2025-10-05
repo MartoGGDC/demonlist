@@ -3,6 +3,7 @@
     "rank": 1,
     "title": "Slaughterhouse",
     "creator": "IcedCave",
+    "youtube": "https://www.youtube.com/watch?v=2eRg3yU5nHQ",
     "recordHolders": [
       { "name": "SpaceUK", "percent": "100%", "verified": true },
       { "name": "Trick", "percent": "100%" },
@@ -13,6 +14,7 @@
     "rank": 2,
     "title": "Acheron",
     "creator": "GrenadeOfTacos",
+    "youtube": "https://youtu.be/v4gV0w4NRwE",
     "recordHolders": [
       { "name": "Zoink", "percent": "100%" },
       { "name": "Trusta", "percent": "100%" }
@@ -22,6 +24,7 @@
     "rank": 3,
     "title": "Shukketsu",
     "creator": "Wooshi999",
+    "youtube": "https://www.youtube.com/watch?v=1tU2xU7J0nY",
     "recordHolders": [
       { "name": "Nswish", "percent": "100%" },
       { "name": "Sunix", "percent": "100%" }
