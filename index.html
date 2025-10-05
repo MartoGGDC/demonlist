@@ -31,22 +31,43 @@
         container.innerHTML = "";
 
         levels.forEach(level => {
+          // Convert YouTube link to embed
+          let embedUrl = "";
+          if (level.youtube) {
+            embedUrl = level.youtube
+              .replace("watch?v=", "embed/")
+              .replace("youtu.be/", "www.youtube.com/embed/");
+          }
+
           const holdersHTML = level.recordHolders.map(
             h => `<li>• ${h.name} — ${h.percent}${h.verified ? " (Verified)" : ""}</li>`
           ).join("");
 
           const section = document.createElement("section");
           section.className = "bg-zinc-800 p-4 rounded-2xl shadow-lg";
+
           section.innerHTML = `
             <div class="flex items-center justify-between">
               <h2 class="text-2xl font-bold">#${level.rank} — ${level.title}</h2>
               <span class="text-sm text-zinc-400">by ${level.creator}</span>
             </div>
-            <div class="mt-2 border-t border-zinc-700 pt-2">
+
+            ${embedUrl ? `
+              <div class="mt-3 aspect-video">
+                <iframe
+                  src="${embedUrl}"
+                  title="${level.title} video"
+                  class="w-full h-full rounded-lg"
+                  allowfullscreen>
+                </iframe>
+              </div>` : ''}
+
+            <div class="mt-3 border-t border-zinc-700 pt-2">
               <p class="text-sm text-zinc-400 mb-1">Record Holders:</p>
               <ul class="text-sm space-y-1">${holdersHTML}</ul>
             </div>
           `;
+
           container.appendChild(section);
         });
       } catch (err) {
